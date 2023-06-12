@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 매니페스트 연결, 테마 색상 변경 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#fffffff">
+    <link rel="shortcut icon" href="images/icons/favicon.png">
+    <title>PWA by JS</title>
+</head>
+<style>
+    html,body{
+        /* height: 100%; */
+        margin: 0;
+        padding: 0;
+        background-color: #a0fdfe;
+        color: #2dcaff;
+        text-shadow: 2px 1px 1px #249dc5;
+;
+    }
+    .container{
+        height: 100vh;
+        /* height: 100%; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Hello, PWA!</h1>
+        <img src="./images/icons/android-chrome-192x192.png" alt="">
+        <p>by Javascript</p>
+    </div>
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker
+            .register('./service_worker.js')
+            .then(function() {
+                console.log('서비스 워커 등록 완료!')
+            })
+        }
+    </script>
+</body>
+</html>
